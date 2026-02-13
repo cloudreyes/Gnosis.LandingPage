@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Gnosis AI</title>
+    <meta name="description" content="Privacy Policy for Gnosis AI - AI Conversations on Your Wrist.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            DEFAULT: '#6B8E7E',
+                            50: '#F4F7F6',
+                            100: '#E9EFED',
+                            200: '#D3E0DB',
+                            300: '#BDD1C8',
+                            400: '#A7C1B6',
+                            500: '#91B2A4',
+                            600: '#7B9D8E',
+                            700: '#6B8E7E', // Primary Sage
+                            800: '#567265',
+                            900: '#41564C',
+                        },
+                        cream: {
+                            DEFAULT: '#FDFCF8',
+                            dark: '#F5F2E8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script>
+        // Check for saved theme preference, otherwise use system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .prose h2 {
+            scroll-margin-top: 100px;
+        }
+        @media print {
+            .glass, #theme-toggle, nav, footer {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .max-w-4xl {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img
+                        src="favicon/favicon-96x96.png"
+                        alt="Gnosis AI app icon"
+                        class="w-8 h-8 rounded-lg shadow-sm"
+                        width="32"
+                        height="32"
+                        loading="eager"
+                        decoding="async"
+                />
+                <span class="font-semibold text-xl tracking-tight text-sage-900 dark:text-sage-100">Gnosis AI</span>
+            </a>
+            <div class="flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="index.html" class="hidden md:block hover:text-sage transition-colors">Home</a>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                    <!-- Sun Icon (shown in dark mode) -->
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414zm2.121 12.02a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <!-- Moon Icon (shown in light mode) -->
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <header class="mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Privacy Policy</h1>
+                <p class="text-slate-600 dark:text-slate-400">Last Updated: February 13, 2026</p>
+            </header>
+
+            <div class="grid lg:grid-cols-4 gap-12">
+                <!-- Table of Contents (Desktop) -->
+                <aside class="hidden lg:block">
+                    <div class="sticky top-32 space-y-4">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-sage">On this page</h3>
+                        <nav class="flex flex-col space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                            <a href="#introduction" class="hover:text-sage transition-colors">1. Introduction</a>
+                            <a href="#collection" class="hover:text-sage transition-colors">2. Information We Collect</a>
+                            <a href="#usage" class="hover:text-sage transition-colors">3. How We Use Information</a>
+                            <a href="#third-party" class="hover:text-sage transition-colors">4. Third-Party Services</a>
+                            <a href="#storage" class="hover:text-sage transition-colors">5. Storage and Retention</a>
+                            <a href="#sharing" class="hover:text-sage transition-colors">6. Data Sharing</a>
+                            <a href="#analytics" class="hover:text-sage transition-colors">7. Analytics and Tracking</a>
+                            <a href="#children" class="hover:text-sage transition-colors">8. Children's Privacy</a>
+                            <a href="#rights" class="hover:text-sage transition-colors">9. Your Privacy Rights</a>
+                            <a href="#security" class="hover:text-sage transition-colors">10. Data Security</a>
+                            <a href="#transfers" class="hover:text-sage transition-colors">11. International Transfers</a>
+                            <a href="#changes" class="hover:text-sage transition-colors">12. Changes to Policy</a>
+                            <a href="#california" class="hover:text-sage transition-colors">13. California Rights</a>
+                            <a href="#contact" class="hover:text-sage transition-colors">14. Contact Us</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Policy Content -->
+                <div class="lg:col-span-3 prose dark:prose-invert max-w-none space-y-12">
+                    <section id="introduction">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. INTRODUCTION</h2>
+                        <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                            Gnosis AI ("we," "our," or "the App") is committed to protecting your privacy. This policy explains how we handle your information when you use our Apple Watch application.
+                        </p>
+                    </section>
+
+                    <section id="collection">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">2. INFORMATION WE COLLECT</h2>
+                        <div class="space-y-6 text-slate-600 dark:text-slate-400">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-2">Voice Input and Conversations</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>When you speak to Gnosis AI, your voice is converted to text on your device</li>
+                                    <li>Your questions and the AI responses are temporarily processed to provide the service</li>
+                                    <li>Conversation history is stored locally on your Apple Watch and paired iPhone</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-2">Device Information</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Basic device information required for app functionality</li>
+                                    <li>No personal identifiers are collected</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="usage">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. HOW WE USE YOUR INFORMATION</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>To provide AI-powered responses to your questions</li>
+                            <li>To maintain conversation history for contextual dialogue</li>
+                            <li>To enable the core functionality of the app</li>
+                        </ul>
+                    </section>
+
+                    <section id="third-party">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">4. THIRD-PARTY AI SERVICES</h2>
+                        <div class="space-y-4 text-slate-600 dark:text-slate-400">
+                            <p>
+                                Gnosis AI uses third-party AI language models to process your requests and generate responses. Your conversation data is sent to these services:
+                            </p>
+                            <div class="bg-sage-50 dark:bg-slate-900 p-4 rounded-xl border border-sage-100 dark:border-slate-800 italic text-sm">
+                                [Note: Will specify Anthropic Claude or Google Gemini once decided]
+                            </div>
+                            <p>
+                                These services process your questions to generate responses. They have their own privacy policies:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Anthropic Claude: <a href="https://www.anthropic.com/privacy" class="text-sage hover:underline">https://www.anthropic.com/privacy</a></li>
+                                <li>Google Gemini: <a href="https://policies.google.com/privacy" class="text-sage hover:underline">https://policies.google.com/privacy</a></li>
+                            </ul>
+                            <p>
+                                We do not control how these third parties handle data sent to them. Please review their privacy policies to understand their practices.
+                            </p>
+                            <p class="font-medium text-slate-900 dark:text-white">
+                                Important: Your conversations are sent to these AI services in real-time to generate responses. This data transmission is necessary for the app to function.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="storage">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">5. DATA STORAGE AND RETENTION</h2>
+                        <div class="space-y-4 text-slate-600 dark:text-slate-400">
+                            <h3 class="font-bold text-slate-900 dark:text-white">Local Storage Only</h3>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>All conversation history is stored locally on your Apple Watch and paired iPhone</li>
+                                <li>We do NOT store your conversations on our servers</li>
+                                <li>Data is stored using standard Apple frameworks (Core Data, UserDefaults, iCloud sync if enabled)</li>
+                                <li>You can delete conversation history at any time within the app</li>
+                                <li>All data is automatically deleted when you uninstall the app</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="sharing">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">6. DATA SHARING</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>We do NOT sell, rent, or share your personal information with third parties for marketing purposes</li>
+                            <li>We do NOT use advertising or tracking technologies</li>
+                            <li>Data is only shared with AI service providers as necessary to generate responses</li>
+                            <li>We do receive aggregate statistics or analytics from Apple App Store Connect (downloads, crashes, basic usage)</li>
+                        </ul>
+                    </section>
+
+                    <section id="analytics">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">7. ANALYTICS AND TRACKING</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>We do NOT use third-party analytics or tracking tools</li>
+                            <li>We do NOT track your behavior or usage patterns</li>
+                            <li>Basic app statistics (downloads, active devices, crashes) are provided by Apple and do not identify individual users</li>
+                            <li>No cookies or tracking pixels are used</li>
+                        </ul>
+                    </section>
+
+                    <section id="children">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">8. CHILDREN'S PRIVACY</h2>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Gnosis AI is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+                        </p>
+                    </section>
+
+                    <section id="rights">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">9. YOUR PRIVACY RIGHTS</h2>
+                        <div class="space-y-2 text-slate-600 dark:text-slate-400">
+                            <p>You have the right to:</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Delete all conversation history within the app settings</li>
+                                <li>Stop using the app at any time</li>
+                                <li>Remove all locally stored data by deleting the app</li>
+                                <li>Contact us with privacy questions or concerns</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="security">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">10. DATA SECURITY</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>Conversations are transmitted securely (HTTPS/TLS) to AI service providers</li>
+                            <li>Local data is protected by your device's security features</li>
+                            <li>We implement industry-standard security practices</li>
+                        </ul>
+                    </section>
+
+                    <section id="transfers">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">11. INTERNATIONAL DATA TRANSFERS</h2>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            AI service providers may process data in countries outside your residence. By using Gnosis AI, you consent to this transfer and processing.
+                        </p>
+                    </section>
+
+                    <section id="changes">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">12. CHANGES TO THIS POLICY</h2>
+                        <div class="space-y-4 text-slate-600 dark:text-slate-400">
+                            <p>
+                                We may update this privacy policy from time to time. We will notify you of significant changes by:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Posting the new policy at gnosisai.app/privacy</li>
+                                <li>Updating the "Last Updated" date</li>
+                                <li>(Optional) In-app notification for material changes</li>
+                            </ul>
+                            <p>
+                                Continued use of the app after changes constitutes acceptance of the updated policy.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="california">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">13. CALIFORNIA PRIVACY RIGHTS</h2>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            California residents: We do not sell personal information. You have rights under CCPA to request information about data collection and deletion.
+                        </p>
+                    </section>
+
+                    <section id="contact">
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">14. CONTACT US</h2>
+                        <div class="space-y-4 text-slate-600 dark:text-slate-400">
+                            <p>If you have questions about this privacy policy or our privacy practices:</p>
+                            <p>
+                                Email: <a href="mailto:hello@sandybrook.io" class="text-sage hover:underline">hello@sandybrook.io</a>
+                            </p>
+                            <p class="mt-4">
+                                Sandy Brook DevWorks LLC<br>
+                                5900 Balcones Drive Ste 100<br>
+                                Austin, TX 78731<br>
+                                United States
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-cream dark:bg-slate-950 text-slate-500 dark:text-slate-400 text-center border-t border-slate-100 dark:border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-center space-x-2 mb-8">
+                <img
+                        src="favicon/favicon-96x96.png"
+                        alt="Gnosis AI app icon"
+                        class="w-6 h-6 rounded shadow-sm"
+                        width="24"
+                        height="24"
+                        loading="lazy"
+                        decoding="async"
+                />
+                <span class="font-semibold text-slate-900 dark:text-white">Gnosis AI</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8 text-sm">
+                <a href="mailto:hello@sandybrook.io" class="hover:text-sage transition-colors">hello@sandybrook.io</a>
+                <a href="index.html" class="hover:text-sage transition-colors">Home</a>
+                <a href="support.html" class="hover:text-sage transition-colors">Support</a>
+            </div>
+            <p class="text-xs uppercase tracking-widest opacity-60">
+                © 2026 Sandy Brook DevWorks LLC
+            </p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle Logic
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+            const themeToggleBtn = document.getElementById('theme-toggle');
+
+            // Change the icons inside the button based on previous settings
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                themeToggleLightIcon.classList.remove('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+
+            themeToggleBtn.addEventListener('click', function() {
+                // toggle icons inside button
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+
+                // if set via local storage previously
+                if (localStorage.getItem('theme')) {
+                    if (localStorage.getItem('theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    }
+                // if NOT set via local storage previously
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
